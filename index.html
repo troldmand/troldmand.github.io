@@ -1,9 +1,246 @@
-<!-- Cal floating-popup embed code begins -->
-<script type="text/javascript">
-  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-Cal("init", "fysisk-møde", {origin:"https://cal.com"});
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karl Kristiansen | IT Solutions Architect</title>
+    <style>
+        :root {
+            --primary: #2d3748;
+            --secondary: #4a5568;
+            --accent: #4299e1;
+            --light: #f7fafc;
+            --dark: #1a202c;
+        }
+        
+        body {
+            font-family: 'SF Mono', 'Roboto Mono', monospace;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 1rem;
+            position: relative;
+        }
+        
+        h1 {
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .tagline {
+            color: var(--secondary);
+            font-size: 1.2rem;
+            font-weight: 400;
+        }
+        
+        .expertise {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .expertise-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid var(--accent);
+        }
+        
+        h2 {
+            color: var(--primary);
+            margin-top: 0;
+        }
+        
+        .language-toggle {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: white;
+            padding: 0.5rem;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .language-toggle button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.25rem 0.5rem;
+            font-family: inherit;
+        }
+        
+        .language-toggle button.active {
+            font-weight: bold;
+            color: var(--accent);
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e2e8f0;
+            color: var(--secondary);
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .language-toggle {
+                position: static;
+                margin-bottom: 1rem;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="language-toggle">
+            <button id="lang-da" class="active">Dansk</button>
+            <button id="lang-en">English</button>
+        </div>
+        <h1>Karl Kristiansen</h1>
+        <p class="tagline" data-en="IT Solutions Architect | Project Leader | Technology Entrepreneur" data-da="IT Arkitekt | Projektleder | Teknologientreprenør">IT Arkitekt | Projektleder | Teknologientreprenør</p>
+    </header>
+    
+    <main>
+        <section>
+            <h2 data-en="Professional Profile" data-da="Professionel profil">Professionel profil</h2>
+            <p data-en="With over a decade of experience in IT and software development, I bridge the gap between technical implementation and business strategy. My expertise spans from hands-on development to high-level solution architecture and project brokerage." 
+               data-da="Med over 10 års erfaring inden for IT og softwareudvikling, formidler jeg mellem teknisk implementering og forretningsstrategi. Min ekspertise spænder fra praktisk udvikling til løsningsarkitektur og projektformidling.">
+                Med over 10 års erfaring inden for IT og softwareudvikling, formidler jeg mellem teknisk implementering og forretningsstrategi. Min ekspertise spænder fra praktisk udvikling til løsningsarkitektur og projektformidling.
+            </p>
+        </section>
+        
+        <section class="expertise">
+            <div class="expertise-item">
+                <h3 data-en="Development & Prototyping" data-da="Udvikling & Prototyping">Udvikling & Prototyping</h3>
+                <p data-en="Rapid application development with focus on practical, scalable solutions. Specialized in turning concepts into working prototypes quickly."
+                   data-da="Hurtig applikationsudvikling med fokus på praktiske, skalerbare løsninger. Speciale i at omdanne koncepter til fungerende prototyper hurtigt.">
+                    Hurtig applikationsudvikling med fokus på praktiske, skalerbare løsninger. Speciale i at omdanne koncepter til fungerende prototyper hurtigt.
+                </p>
+            </div>
+            
+            <div class="expertise-item">
+                <h3 data-en="Project Leadership" data-da="Projektledelse">Projektledelse</h3>
+                <p data-en="End-to-end project management from requirements gathering to delivery. Proven track record of keeping projects on time and within budget."
+                   data-da="Komplet projektstyring fra kravindsamling til levering. Dokumenteret evne til at holde projekter til tiden og inden for budget.">
+                    Komplet projektstyring fra kravindsamling til levering. Dokumenteret evne til at holde projekter til tiden og inden for budget.
+                </p>
+            </div>
+            
+            <div class="expertise-item">
+                <h3 data-en="Solution Architecture" data-da="Løsningsarkitektur">Løsningsarkitektur</h3>
+                <p data-en="Designing robust IT landscapes that grow with your business. Technology agnostic approach focused on solving business problems."
+                   data-da="Design af robuste IT-landskaber der vokser med din virksomhed. Teknologineutral tilgang fokuseret på at løse forretningsproblemer.">
+                    Design af robuste IT-landskaber der vokser med din virksomhed. Teknologineutral tilgang fokuseret på at løse forretningsproblemer.
+                </p>
+            </div>
+            
+            <div class="expertise-item">
+                <h3 data-en="Technology Brokerage" data-da="Teknologiformidling">Teknologiformidling</h3>
+                <p data-en="Connecting businesses with the right technology solutions and partners for larger scale implementations and digital transformations."
+                   data-da="Formidling af de rigtige teknologiløsninger og partnere til større implementeringer og digitale transformationer.">
+                    Formidling af de rigtige teknologiløsninger og partnere til større implementeringer og digitale transformationer.
+                </p>
+            </div>
+        </section>
+        
+        <section>
+            <h2 data-en="Approach" data-da="Tilgang">Tilgang</h2>
+            <p data-en="I believe in pragmatic technology solutions that deliver real business value. My work combines technical excellence with commercial awareness, ensuring that investments in technology translate to measurable results."
+               data-da="Jeg tror på pragmatiske teknologiløsninger der skaber reel forretningsværdi. Mit arbejde kombinerer teknisk ekspertise med forretningsforståelse, så teknologinvesteringer omsættes til målbare resultater.">
+                Jeg tror på pragmatiske teknologiløsninger der skaber reel forretningsværdi. Mit arbejde kombinerer teknisk ekspertise med forretningsforståelse, så teknologinvesteringer omsættes til målbare resultater.
+            </p>
+        </section>
+    </main>
+    
+    <footer>
+        <p data-en="Available for consulting engagements, project leadership, and technology advisory."
+           data-da="Tilgængelig for konsulentopgaver, projektledelse og teknologirådgivning.">
+            Tilgængelig for konsulentopgaver, projektledelse og teknologirådgivning.
+        </p>
+    </footer>
+    
+    <!-- Cal floating-popup embed code begins -->
+    <script type="text/javascript">
+      (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", "fysisk-møde", {origin:"https://cal.com"});
 
-  Cal.ns["fysisk-møde"]("floatingButton", {"calLink":"karlkrist/fysisk-møde","config":{"layout":"month_view","theme":"light"},"buttonText":"Book en behandling","hideButtonIcon":false,"buttonPosition":"bottom-left"}); 
-  Cal.ns["fysisk-møde"]("ui", {"theme":"light","styles":{"branding":{"brandColor":"#cacb4a"}},"hideEventTypeDetails":false,"layout":"month_view"});
-  </script>
-  <!-- Cal floating-popup embed code ends -->
+      Cal.ns["fysisk-møde"]("floatingButton", {"calLink":"karlkrist/fysisk-møde","config":{"layout":"month_view","theme":"light"},"buttonText":"Book en snak","hideButtonIcon":false,"buttonPosition":"bottom-left"}); 
+      Cal.ns["fysisk-møde"]("ui", {"theme":"light","styles":{"branding":{"brandColor":"#cacb4a"}},"hideEventTypeDetails":false,"layout":"month_view"});
+    </script>
+    <!-- Cal floating-popup embed code ends -->
+
+    <script>
+        // Language toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check browser language and set initial language
+            const userLang = navigator.language || navigator.userLanguage;
+            const isDanish = userLang.startsWith('da');
+            setLanguage(isDanish ? 'da' : 'en');
+            
+            // Set up button event listeners
+            document.getElementById('lang-da').addEventListener('click', () => setLanguage('da'));
+            document.getElementById('lang-en').addEventListener('click', () => setLanguage('en'));
+            
+            function setLanguage(lang) {
+                // Update button states
+                document.getElementById('lang-da').classList.toggle('active', lang === 'da');
+                document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+                
+                // Update all translatable elements
+                document.querySelectorAll('[data-da], [data-en]').forEach(el => {
+                    if (el.tagName === 'HTML') {
+                        el.lang = lang;
+                    } else {
+                        const text = lang === 'da' ? el.getAttribute('data-da') : el.getAttribute('data-en');
+                        if (text) {
+                            if (el.hasAttribute('placeholder')) {
+                                el.setAttribute('placeholder', text);
+                            } else {
+                                el.textContent = text;
+                            }
+                        }
+                    }
+                });
+                
+                // Update Cal.com button text
+                if (window.Cal && window.Cal.ns && window.Cal.ns["fysisk-møde"]) {
+                    const newText = lang === 'da' ? "Book en snak" : "Book a chat";
+                    Cal.ns["fysisk-møde"]("ui", {
+                        "buttonText": newText
+                    });
+                    // Also update the floating button config directly
+                    Cal.ns["fysisk-møde"]("floatingButton", {
+                        "buttonText": newText,
+                        "calLink": "karlkrist/fysisk-møde",
+                        "config": {"layout":"month_view","theme":"light"},
+                        "hideButtonIcon": false,
+                        "buttonPosition": "bottom-left"
+                    });
+                }
+            }
+        });
+    </script>
+</body>
+</html>
